@@ -36,10 +36,10 @@ public class RungeKuttMethod {
 		sb.append("N;x;y;error\n");
 		sb.append(String.format("%d;%f;%f;%f\n", N, xn, yn, 0d));
 		while (xn <= B) {
-			yp3 = rungeKutt3(xn, yn, h);//вычисляем методами 3 и 4 порядков
+			yp3 = rungeKutt3(xn, yn, h);
 			yp4 = rungeKutt4(xn, yp4, h);
-			localError = Math.abs(yp3 - yp4);//находим локальную погрешность
-			h = step.estimate(h, localError);//проверяем наш шаг
+			localError = Math.abs(yp3 - yp4);
+			h = step.estimate(h, localError);
 			xn = xn + h;
 			yn = yp3;
 			N++;
