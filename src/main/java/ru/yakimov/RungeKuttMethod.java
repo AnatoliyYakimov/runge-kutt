@@ -65,11 +65,11 @@ public class RungeKuttMethod {
 		}
 	}
 
-	public static Double f(Double x, Double y) {
-		return Math.pow(x, 5) +  3 * Math.pow(x, 3) + 2 * x;
+	public static double f(double x, double y) {
+		return Math.pow(x, 3) +  2 * Math.pow(x, 2) + 2 * x;
 	}
 
-	public static Double rungeKutt3(Double xn, Double yn, Double hn) {
+	public static double rungeKutt3(double xn, double yn, double hn) {
 		double k1, k2, k3, ynext;
 		k1 = hn * f(xn, yn);
 		k2 = hn * f(xn + hn / 3, yn + k1 / 3);
@@ -80,7 +80,7 @@ public class RungeKuttMethod {
 		return ynext;
 	}
 
-	public static Double rungeKutt4(Double xn, Double yn, Double hn) {
+	public static double rungeKutt4(double xn, double yn, double hn) {
 		double k1, k2, k3, k4, ynext;
 		k1 = hn * f(xn, yn);
 		k2 = hn * f(xn + hn / 3, yn + k1 / 3);
